@@ -1,4 +1,4 @@
-name:depending jobs
+name: depending jobs
 
 on:
   workflow_dispatch
