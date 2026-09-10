@@ -1,0 +1,29 @@
+name:depending jobs
+
+on:
+  workflow_dispatch
+
+jobs:
+  say-shell-hello:
+    runs-on : ubuntu-24.04
+
+    steps:
+      - run: echo "hello from shell"
+
+  say-python-hello:
+    runs-on : ubuntu-24.04
+
+    steps:
+      - run: print("hello from python")
+        shell: python
+
+  need_prev_jobs:
+    
+    runs-on :ubuntu-24.04
+    needs:
+      - say-shell-hello
+      - say-python-hello
+    steps:
+      - run : echo "both needed"
+      
+  
