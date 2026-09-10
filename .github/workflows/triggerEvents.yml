@@ -1,0 +1,14 @@
+name: github trigger events
+
+on:
+  push:
+    branches: 
+    - main
+
+jobs: 
+
+  job1:
+    runs-on: ubuntu-24.04
+    
+    steps:
+      - run: echo "hello world"
